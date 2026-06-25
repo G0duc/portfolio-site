@@ -1,0 +1,424 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Hull | Filmmaker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#050505;
+            color:#fff;
+            font-family:'Inter',sans-serif;
+            line-height:1.8;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            position:fixed;
+            top:0;
+            width:100%;
+            padding:30px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            z-index:1000;
+            background:rgba(0,0,0,.3);
+            backdrop-filter:blur(10px);
+        }
+
+        .logo{
+            font-family:'Oswald',sans-serif;
+            font-size:2rem;
+            letter-spacing:4px;
+            text-transform:uppercase;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:3rem;
+        }
+
+        .nav-links a{
+            text-transform:uppercase;
+            letter-spacing:2px;
+            font-size:.9rem;
+            transition:.3s;
+        }
+
+        .nav-links a:hover{
+            color:#ff8c00;
+        }
+
+        /* HERO */
+
+        header{
+            height:100vh;
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        header video{
+            position:absolute;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .overlay{
+            position:absolute;
+            inset:0;
+            background:rgba(0,0,0,.7);
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:10;
+            max-width:900px;
+            padding:20px;
+        }
+
+        .hero-content h1{
+            font-family:'Oswald',sans-serif;
+            font-size:clamp(4rem,10vw,8rem);
+            text-transform:uppercase;
+            letter-spacing:10px;
+            line-height:1;
+        }
+
+        .tagline{
+            margin:30px 0;
+            color:#ff8c00;
+            text-transform:uppercase;
+            letter-spacing:4px;
+            font-size:1rem;
+        }
+
+        .hero-content p{
+            color:#d1d1d1;
+            font-size:1.25rem;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:40px;
+            padding:15px 40px;
+            border:1px solid #ff8c00;
+            text-transform:uppercase;
+            letter-spacing:2px;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            background:#ff8c00;
+        }
+
+        /* SECTIONS */
+
+        section{
+            padding:120px 8%;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:60px;
+        }
+
+        .section-title span{
+            color:#ff8c00;
+            text-transform:uppercase;
+            letter-spacing:3px;
+            font-size:.85rem;
+        }
+
+        .section-title h2{
+            font-family:'Oswald',sans-serif;
+            font-size:4rem;
+            letter-spacing:5px;
+            text-transform:uppercase;
+        }
+
+        /* ABOUT */
+
+        .about{
+            max-width:800px;
+            margin:auto;
+            text-align:center;
+            color:#b0b0b0;
+            font-size:1.15rem;
+        }
+
+        /* PORTFOLIO */
+
+        .portfolio-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:#0d0d0d;
+            border:1px solid #1a1a1a;
+            overflow:hidden;
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+        }
+
+        .card img{
+            width:100%;
+            aspect-ratio:16/9;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:25px;
+        }
+
+        .category{
+            color:#ff8c00;
+            text-transform:uppercase;
+            font-size:.8rem;
+            letter-spacing:2px;
+        }
+
+        .card h3{
+            margin:10px 0;
+            font-family:'Oswald',sans-serif;
+            letter-spacing:2px;
+            font-size:1.8rem;
+        }
+
+        .card p{
+            color:#b0b0b0;
+        }
+
+        /* CONTACT */
+
+        .contact{
+            text-align:center;
+        }
+
+        .contact p{
+            margin:15px 0;
+            color:#d0d0d0;
+        }
+
+        /* FOOTER */
+
+        footer{
+            padding:40px;
+            text-align:center;
+            color:#666;
+            border-top:1px solid #222;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            .nav-links{
+                gap:1.5rem;
+            }
+
+            .hero-content h1{
+                letter-spacing:5px;
+            }
+
+            .section-title h2{
+                font-size:2.5rem;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Patrick Hull</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+
+        <!-- Replace hero.mp4 with your reel -->
+
+        <video autoplay muted loop playsinline>
+            <source src="hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>Patrick Hull</h1>
+
+            <div class="tagline">
+                Filmmaker • Storyteller • Visual Creator
+            </div>
+
+            <p>
+                Cinematic storytelling through authentic moments.<br>
+                Weddings. Events. Documentaries.
+            </p>
+
+            <a href="#portfolio" class="btn">
+                View Work
+            </a>
+
+        </div>
+
+    </header>
+
+    <section id="about">
+
+        <div class="section-title">
+            <span>About</span>
+            <h2>Telling Stories That Last</h2>
+        </div>
+
+        <div class="about">
+            I'm a filmmaker and content creator based in Central New York.
+            I love crafting cinematic, emotion-driven films that capture real moments and turn them into stories people will remember.
+        </div>
+
+    </section>
+
+    <section id="portfolio">
+
+        <div class="section-title">
+            <span>Featured Work</span>
+            <h2>Portfolio</h2>
+        </div>
+
+        <div class="portfolio-grid">
+
+            <div class="card">
+                <img src="wedding.jpg" alt="Wedding Film">
+
+                <div class="card-content">
+                    <div class="category">Wedding Film</div>
+                    <h3>Sarah & John</h3>
+                    <p>
+                        A cinematic wedding highlight film filled with love and laughter.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="school.jpg" alt="Documentary">
+
+                <div class="card-content">
+                    <div class="category">Documentary</div>
+                    <h3>200 Years of History</h3>
+                    <p>
+                        Interview and documentary project celebrating a 200-year legacy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="concert.jpg" alt="Concert">
+
+                <div class="card-content">
+                    <div class="category">Event Coverage</div>
+                    <h3>Harborfest 2026</h3>
+                    <p>
+                        Live event and concert coverage capturing the atmosphere and energy.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <div class="section-title">
+            <span>Contact</span>
+            <h2>Let's Create Together</h2>
+        </div>
+
+
+<div class="contact">
+
+    <p>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:hullp5501@gmail.com">
+            hullp5501@gmail.com
+        </a>
+    </p>
+
+    <p>
+        <i class="fa-brands fa-instagram"></i>
+        <a href="https://instagram.com/patrickhullfilms" target="_blank">
+            @patrickhullfilms
+        </a>
+    </p>
+
+    <p>
+        <i class="fa-solid fa-location-dot"></i>
+        Central New York
+    </p>
+
+    <a href="mailto:hullp5501@gmail.com" class="btn">
+        Get In Touch
+    </a>
+
+</div>
+
+
+
+    </section>
+
+    <footer>
+        © 2026 Patrick Hull. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
+```
